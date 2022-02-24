@@ -1,0 +1,56 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to left, #CBCE91FF, #EA738DFF);
+}
+
+#btn-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(6, 80px);
+}
+
+#btn-container > button {
+    cursor: pointer;
+    font-size: 2em;
+    border: 1px solid #AAA;
+    background-color: rbga(255, 255, 255, 0.75);
+}
+
+#btn-container > button:hover {
+    background-color: #a9a9a9;
+}
+
+.output-screen {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+/*  word-wrap: break-word;
+    word-break: break-all; */
+}
+
+.twice {
+    grid-column: span 2;
+    color: #cf4529;
+
+}
+.output-screen .previous-operand {
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.output-screen .current-operand {
+    color: white;
+    font-size: 2.4em;
+}
