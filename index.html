@@ -5,37 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Calculator!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    
 </head>
 <body>
-    <div id="btn-container">
-        <div class="output-screen">
-            <div class="previous-operand">123 333333333333333333333+</div>
-            <div class="current-operand">999</div>
+    <section>  
+        <div class="description-box">
+            <h1 class="title">The Calculator</h1>
+            <div class="description">This is a simple calculator page. You can input desired numbers and operators and perform a calculation.
+                <br> Caution: If you are willing to perform a calculation such as (9 - 2 + 3), please kindly note that you have to press the equal button after entering 2.
+            </div>
         </div>
-        <button class="btn-ac func twice">AC</button>
-        <button class="btn-del" func>DEL</button>
-        <button class="btn-divide operand">÷</button>
-        
-        <button class="btn-1">1</button>
-        <button class="btn-2">2</button>
-        <button class="btn-3">3</button>
-        <button class="btn-time operand">*</button>
 
-        <button class="btn-4">4</button>
-        <button class="btn-5">5</button>
-        <button class="btn-6">6</button>
-        <button class="btn-plus operand">+</button>
+        <div class="container">
+            <div class="display">
+                <div class="display1">0</div>
+                <div class="display2">0</div>
+            </div>
+            
+            <div class="all-buttons">
+                <button class="btn-ac span2">AC</button>
+                <button class="btn-del">DEL</button>
+                <button class="btn-divide operator">÷</button>
+            
+                <button class="btn-num">7</button>
+                <button class="btn-num">8</button>
+                <button class="btn-num">9</button>
+                <button class="btn-times operator">×</button>
 
-        <button class="btn-7">7</button>
-        <button class="btn-8">8</button>
-        <button class="btn-9">9</button>
-        <button class="btn-minus operand">-</button>
-
-        <button class="btn-dot">.</button>
-        <button class="btn-0">0</button>
-        <button class="btn-equal operand twice">=</button>
-    </div>
+                <button class="btn-num">4</button>
+                <button class="btn-num">5</button>
+                <button class="btn-num">6</button>
+                <button class="btn-minus operator">-</button>            
+            
+                <button class="btn-num">1</button>
+                <button class="btn-num">2</button>
+                <button class="btn-num">3</button>
+                <button class="btn-plus operator">+</button>
+            
+                <button class="btn-num btn-0">0</button>
+                <button class="btn-decimal">.</button>
+                <button class="btn-equal operator">=</button> 
+            </div>
+        </div>
+    </section>
+    
 </body>
 </html>
