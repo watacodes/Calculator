@@ -1,9 +1,9 @@
-# Calculator
--------
+# The Calculator Project
+
 This is the Calculator project using HTML, CSS, and Vanilla JavaScript from The Odin Project.
 
-# Basic functions
-------
+## Basic functions
+
 - Basic arithmetics such as:
     - Addition
     - Subtraction
@@ -12,8 +12,8 @@ This is the Calculator project using HTML, CSS, and Vanilla JavaScript from The 
 - Clearing all calculations
 - Deleting one digit
 
-# Fixed Bugs
------
+## Fixed Bugs
+
 - Bug type: Shows **'NaN'** when the equal button is pressed without two pairs of numbers.
     - Now, instead of displaying 'NaN' and falsely showing '=' button in the display, the screen gets wiped and shows the error message when the error happens.
 
@@ -23,8 +23,8 @@ This is the Calculator project using HTML, CSS, and Vanilla JavaScript from The 
 - Bug type: Decimal points('.') can be pressed multiple times.
     - The decimal point is now only available once per each pair of number.
 
-# Update plans
-------
+## Update plans
+
 - Adding more functions
 
 - Applying styles for each buttons
