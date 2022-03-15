@@ -83,10 +83,14 @@ function mathOperation() {
     }
 }
 
+// Fixed the bug that shows 'NaN' when the equal button pressed without two pairs of numbers.
 
 equalButton.addEventListener('click', (e) => {
     console.log('equal pressed');
-    if (!display1Num || !display2Num) ;
+    if (display1Num === '' || display2Num === '') {
+        clearAll();
+        return alert('We need at least two numbers to perform a calculation!');
+    }
     haveDecimal = false;
     mathOperation();
     clearIt();
