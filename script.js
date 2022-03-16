@@ -116,3 +116,27 @@ clearAllButton.addEventListener('click', clearAll);
 
 deleteButton.addEventListener('click', deleteNumbers);
 
+/* New function -> Keydown support
+
+    To-do: 1. Add keyboard input support for decimal
+           2. Add keyboard support for operators
+           3. Let user press enter to execute the calculation
+
+*/ 
+
+window.addEventListener('keydown', (e) => {
+    if (e.key == '0' ||
+        e.key == '1' ||
+        e.key == '2' ||
+        e.key == '3' ||
+        e.key == '4' ||
+        e.key == '5' ||
+        e.key == '6' ||
+        e.key == '7' ||
+        e.key == '8' ||
+        e.key == '9')
+    display2Num += e.key;
+    Display2.innerText = display2Num;
+});
+
+

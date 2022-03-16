@@ -12,6 +12,10 @@ This is the Calculator project using HTML, CSS, and Vanilla JavaScript from The 
 - Clearing all calculations
 - Deleting one digit
 
+## Update History
+
+- Now numbers can be entered by pressing down the keyboard.
+
 ## Fixed Bugs
 
 - Bug type: Shows **'NaN'** when the equal button is pressed without two pairs of numbers.
@@ -25,7 +29,7 @@ This is the Calculator project using HTML, CSS, and Vanilla JavaScript from The 
 
 ## Update plans
 
-- Adding more functions
+- Adding advanced functions
 
 - Applying styles for each buttons
     - Planning to add backspace button as a replacement of current DEL button.
