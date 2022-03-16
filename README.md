@@ -14,7 +14,7 @@ This is the Calculator project using HTML, CSS, and Vanilla JavaScript from The 
 
 ## Update History
 
-- Now numbers can be entered by pressing down the keyboard.
+- Now numbers can be entered by both keyboard and on-screen numbers.
 
 ## Fixed Bugs
 
