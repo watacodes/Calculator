@@ -46,27 +46,6 @@ operatorButtons.forEach(operator => {
     })
 })
 
-// Multiple decimal dots in a single value are disabled.
-
-decimalButton.addEventListener('click', (e) => {
-    if (!Display2.innerText.includes('.') && haveDecimal) {
-        haveDecimal = true;
-    } else if (Display2.innerText.includes('.') && !haveDecimal){
-        return;
-    }
-    display2Num += e.target.innerText;
-    Display2.innerText = display2Num;
-    haveDecimal = false;
-})
-
-
-function clearIt(name = '') {
-    display1Num += display2Num + ' ' + name + ' ';
-    Display1.innerText = display1Num;
-    Display2.innerText = '';
-    display2Num = '';
-}
-
 function mathOperation() {
     if (lastOperation === '×') {
         result = parseFloat(result) * parseFloat(display2Num);
@@ -84,6 +63,27 @@ function mathOperation() {
 }
 
 
+function clearIt(name = '') {
+    display1Num += display2Num + ' ' + name + ' ';
+    Display1.innerText = display1Num;
+    Display2.innerText = '';
+    display2Num = '';
+}
+
+
+
+// Multiple decimal dots in a single value are disabled.
+
+decimalButton.addEventListener('click', (e) => {
+    if (!Display2.innerText.includes('.') && haveDecimal) {
+        haveDecimal = true;
+    } else if (Display2.innerText.includes('.') && !haveDecimal){
+        return;
+    }
+    display2Num += e.target.innerText;
+    Display2.innerText = display2Num;
+    haveDecimal = false;
+})
 
 /* Original equal function */
 // equalButton.addEventListener('click', (e) => {
