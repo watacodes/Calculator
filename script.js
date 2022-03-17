@@ -83,21 +83,25 @@ function mathOperation() {
     }
 }
 
-// Fixed the bug that shows 'NaN' when the equal button pressed without two pairs of numbers.
 
-equalButton.addEventListener('click', (e) => {
-    console.log('equal pressed');
-    if (display1Num === '' || display2Num === '') {
-        clearAll();
-        return alert('We need at least two numbers to perform a calculation!');
-    }
-    haveDecimal = false;
-    mathOperation();
-    clearIt();
-    display2Num = result;
-    Display2.innerText = result;
-    display1Num = '';
-});
+
+/* Original equal function */
+// equalButton.addEventListener('click', (e) => {
+//     console.log('equal pressed');
+//     if (display1Num === '' || display2Num === '') {
+//         clearAll();
+//         return alert('We need at least two numbers to perform a calculation!');
+//     }
+//     haveDecimal = false;
+//     mathOperation();
+//     clearIt();
+//     display2Num = result;
+//     Display2.innerText = result;
+//     display1Num = '';
+// });
+
+equalButton.addEventListener('click', initCalc);
+
 
 function clearAll() {
     Display1.innerText = '';
@@ -125,6 +129,11 @@ deleteButton.addEventListener('click', deleteNumbers);
 */ 
 
 window.addEventListener('keydown', (e) => {
+    if (e.target.innerText === '.' && !haveDecimal) {
+        haveDecimal = true;
+    } else if (e.target.innerText === '.' && haveDecimal){
+        return;
+    }
     if (e.key == '0' ||
         e.key == '1' ||
         e.key == '2' ||
@@ -139,4 +148,55 @@ window.addEventListener('keydown', (e) => {
     Display2.innerText = display2Num;
 });
 
+// Fixed the bug that shows 'NaN' when the equal button pressed without two pairs of numbers.
+// Added new function which gets initiated when the equal button is triggered.
 
+function initCalc() {
+    if (display1Num === '' || display2Num === '') {
+        clearAll();
+        return alert('We need at least two numbers to perform a calculation!');
+    }
+    haveDecimal = false;
+    mathOperation();
+    clearIt();
+    display2Num = result;
+    Display2.innerText = result;
+    display1Num = '';
+}
+
+// Temporarily added keyboard input support for the equal button.
+// To-do: Found a bug with the enter key, and decided to disable the enter key 
+//        However, it seems to be deprecated, hence I need to find the alternative methods.
+
+document.addEventListener('keydown',(e) => {
+    console.log(e.key); 
+    if (e.key == '=' || e.key == 'Enter') {
+        if (e.keyCode == 13) {
+            e.preventDefault();
+        }
+        if (display1Num === '' || display2Num === '') {
+            clearAll();
+            return alert('We need at least two numbers to perform a calculation!');
+        }
+        haveDecimal = false;
+        mathOperation();
+        clearIt();
+        display2Num = result;
+        Display2.innerHtml = result;
+        display1Num = '';
+    }
+});
+
+
+/* Testing new funciton
+
+document.addEventListener('keydown', (e) => {
+
+    if (Display2.textContent.length && display2Num == 0 || specialOperators.includes(Display1.textContent.slice(-2,-1))) return;
+    const operationName = e.target.innerText;
+    
+    if (e.key == '+' || e.key == '-') {
+        console.log(e.key)
+        lastOperation == e.key;
+    } 
+}) */

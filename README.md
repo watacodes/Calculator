@@ -16,6 +16,8 @@ This is the Calculator project using HTML, CSS, and Vanilla JavaScript from The 
 
 - Now numbers can be entered by both keyboard and on-screen numbers.
 
+- Now you can perform the calculation by pressing either the **'='** button or the **'Enter'** button on your keyboard.
+
 ## Fixed Bugs
 
 - Bug type: Shows **'NaN'** when the equal button is pressed without two pairs of numbers.
