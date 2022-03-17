@@ -18,6 +18,8 @@ This is the Calculator project using HTML, CSS, and Vanilla JavaScript from The 
 
 - Now you can perform the calculation by pressing either the **'='** button or the **'Enter'** button on your keyboard.
 
+- Added **Backspace** icon as a replacement of the **"DEL"** button.
+
 ## Fixed Bugs
 
 - Bug type: Shows **'NaN'** when the equal button is pressed without two pairs of numbers.
