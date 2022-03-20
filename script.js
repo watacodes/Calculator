@@ -47,14 +47,14 @@ operatorButtons.forEach(operator => {
 })
 
 function mathOperation() {
-    if (lastOperation === '×') {
-        result = parseFloat(result) * parseFloat(display2Num);
-    } else if (lastOperation === '÷') {
+    if (lastOperation === '÷') {
         if (display1Num == '0' || display2Num == '0') {
             alert("We can't divide by zero!");
             clearAll();
         }
         result = parseFloat(result) / parseFloat(display2Num);
+    } else if (lastOperation === '×') {
+        result = parseFloat(result) * parseFloat(display2Num);
     } else if (lastOperation === '+') {
         result = parseFloat(result) + parseFloat(display2Num);
     } else if (lastOperation === '-') {
@@ -122,18 +122,27 @@ deleteButton.addEventListener('click', deleteNumbers);
 
 /* New function -> Keydown support
 
-    To-do: 1. Add keyboard input support for decimal
-           2. Add keyboard support for operators
-           3. Let user press enter to execute the calculation
+    To-do: 1. Add keyboard input support for decimal -> done
+           2. Add keyboard support for operators 
+           3. Let user press enter to execute the calculation -> done
+           4. Fix the JS float calculation error
 
 */ 
 
 window.addEventListener('keydown', (e) => {
+
+    // For decimal button
+
     if (e.target.innerText === '.' && !haveDecimal) {
         haveDecimal = true;
     } else if (e.target.innerText === '.' && haveDecimal){
         return;
     }
+
+    // For numbers
+
+    if (e.key == '0' && (display2Num == '' || display2Num == '0')) return;
+    
     if (e.key == '0' ||
         e.key == '1' ||
         e.key == '2' ||
@@ -146,13 +155,43 @@ window.addEventListener('keydown', (e) => {
         e.key == '9')
     display2Num += e.key;
     Display2.innerText = display2Num;
+
+    console.log(e.key);
+    if (e.key == '.' && !haveDecimal) {
+        haveDecimal = true;
+        display2Num += e.key;
+        Display2.innerText = display2Num;
+    } else if (e.key == '.' && haveDecimal) {
+        return;
+    }
+
+    if (e.key == 'Backspace' || e.key == 'Delete') {
+        display2Num = display2Num.toString().slice(0,-1);
+        Display2.innerText = display2Num;
+    }
+
+    /* Under construction
+    if (e.key == '+') {
+        lastOperation == '+';
+    } else if (e.key == '-') {
+        lastOperation == '-';
+    } else if (e.key == '/') {
+        lastOperation == '÷'; 
+    } else if (e.key == '*') {
+        lastOperation == '×';
+    }
+    */
 });
+
 
 // Fixed the bug that shows 'NaN' when the equal button pressed without two pairs of numbers.
 // Added new function which gets initiated when the equal button is triggered.
 
 function initCalc() {
-    if (display1Num === '' || display2Num === '') {
+    if (display1Num === '' || 
+        display2Num === '' || 
+        display1Num == NaN ||
+        display2Num == NaN ) {
         clearAll();
         return alert('We need at least two numbers to perform a calculation!');
     }

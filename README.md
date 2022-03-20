@@ -19,7 +19,14 @@ This is the Calculator project using HTML, CSS, and Vanilla JavaScript from The 
 - Now you can perform the calculation by pressing either the **'='** button or the **'Enter'** button on your keyboard.
 
 - Added **Backspace** icon as a replacement of the **"DEL"** button.
-    
+
+- Added keyboard support for the decimal button**(='.')** and migrated into the existing addEventListener.
+
+- Added keyboard support for the delete button. Backspace key  and delete key can now be used to delete a digit.
+
+- Added **Quick Tips** in the description for reference.
+
+
 ## Fixed Bugs
 
 - Bug type: Shows **'NaN'** when the equal button is pressed without two pairs of numbers.
@@ -34,9 +41,6 @@ This is the Calculator project using HTML, CSS, and Vanilla JavaScript from The 
 ## Update plans
 
 - Adding advanced functions
-
-- Applying styles for each buttons
-    - Planning to add backspace button as a replacement of current DEL button.
 
 - Keyboard input support for numbers and operators
 
