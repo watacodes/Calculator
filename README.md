@@ -20,7 +20,7 @@ This is the Calculator project using HTML, CSS, and Vanilla JavaScript from The 
 
 - Added **Backspace** icon as a replacement of the **"DEL"** button.
 
-- Added keyboard support for the decimal button**(='.')** and migrated into the existing addEventListener.
+- Added keyboard support for the decimal button **"."** and migrated into the existing addEventListener.
 
 - Added keyboard support for the delete button. Backspace key  and delete key can now be used to delete a digit.
 
